@@ -23,19 +23,19 @@
     </Menu>
     <br>
     <p>Change theme</p>
-    <!--<RadioGroup v-model="theme3">-->
-        <!--<Radio label="light"></Radio>-->
-        <!--<Radio label="dark"></Radio>-->
-    <!--</RadioGroup>-->
+    <RadioGroup v-model="theme3">
+        <Radio label="light"></Radio>
+        <Radio label="dark"></Radio>
+    </RadioGroup>
 
  </div>
 </template>
 <script>
     export default {
-//        data () {
-//            return {
-//                theme3: 'light'
-//            }
-//        }
+        data () {
+            return {
+                theme3: 'light'
+            }
+        }
     }
 </script>
