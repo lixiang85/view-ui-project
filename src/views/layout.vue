@@ -30,7 +30,7 @@
             <Header>
                 <Menu mode="horizontal" theme="dark" active-name="1" >
                     <div class="layout-logo"></div>
-                    <div class="layout-nav">
+                    <div class="layout-nav">`
                         <!--<MenuItem name="1">-->
                             <!--<Icon type="ios-navigate"></Icon>-->
                             <!--Message-->
@@ -44,11 +44,11 @@
             </Header>
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">
-                    <Menu active-name="1-2" theme="primary" width="auto" :open-names="['1']">
+                    <Menu active-name="1-2" theme="primary" width="auto" :open-names="['1']" @on-select="selectItem">
                         <Submenu name="1">
                             <template slot="title">
                                 <Icon type="ios-navigate"></Icon>
-                                Item 1
+                                权限管理
                             </template>
                             <MenuItem name="1-1">Option 1</MenuItem>
                             <MenuItem name="1-2">Option 2</MenuItem>
@@ -57,7 +57,7 @@
                         <Submenu name="2">
                             <template slot="title">
                                 <Icon type="ios-keypad"></Icon>
-                                Item 2
+                                用户管理
                             </template>
                             <MenuItem name="2-1">Option 1</MenuItem>
                             <MenuItem name="2-2">Option 2</MenuItem>
@@ -65,9 +65,9 @@
                         <Submenu name="3">
                             <template slot="title">
                                 <Icon type="ios-analytics"></Icon>
-                                Item 3
+                                产品管理
                             </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
+                            <MenuItem name="3-1" >产品主数据</MenuItem>
                             <MenuItem name="3-2">Option 2</MenuItem>
                         </Submenu>
                     </Menu>
@@ -88,6 +88,11 @@
 </template>
 <script>
     export default {
-
+        methods:{
+            selectItem(name) {
+                console.log(name);
+                this.$router.push({ name })
+            },
+        }
     }
 </script>
